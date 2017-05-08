@@ -1,1 +1,2 @@
 Hello My name is Lex and this is my first time using Git
+my favorite movie: starwars
