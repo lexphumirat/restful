@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Add a new user</h1>
+        <ul>
+            {% for error_message in messages %}
+                <font color='red'><li>{{ error_message }}</li></font>
+            {% endfor %}
+        </ul>
+        <form class="" action="/create_user" method="post"><br>
+            {% csrf_token %}
+            First Name:<br>
+            <input type="text" name="first_name" value=""><br>
+            Last Name:<br>
+            <input type="text" name="last_name" value=""><br>
+            Email:<br>
+            <input type="text" name="email" value=""><br>
+            <br>
+            <input type="submit" name="Create" value="Create"><br>
+            <br><a href="/checkusers">Go Back</a>
+
+        </form>
+    </body>
+</html>

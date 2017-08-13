@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Add a new user</h1>
+        <ul>
+            {% for user in users %}
+                <li>{{ user }}</li>
+            {% endfor %}
+        </ul>
+        <h1>user id</h1>
+        <ul>
+            {% for user in showuser %}
+                <li>{{ user }}</li>
+            {% endfor %}
+
+        </ul>
+        {{ showuser_id }}
+        <form class="" action="showuser" method="post">
+            {% csrf_token %}
+            <input type="submit" name="" value="clickme">
+
+        </form>
+        <h1>Table</h1>
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+            <td> <ul style="list-style-type:none">
+                {% for fullname in users %}
+                    <li><a href="/usersid/{{user.id}}">{{ fullname.fullname }}</a></li>
+                {% endfor %}
+            </ul></td>
+            <td> <ul style="list-style-type:none">
+                {% for email in users %}
+                    <li>{{ email.emailaddress }}</li>
+                {% endfor %}
+            </ul></td>
+            </tr>
+
+        </table>
+
+
+
+
+        <a href="/"><button type="button" name="button">Add Users</button></a>
+    </body>
+</html>
